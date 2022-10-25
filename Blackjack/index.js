@@ -1,12 +1,19 @@
 let firstCard = 13
-let secondCard = 8
+let secondCard = 2
 let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+let message = ""
 
-if (sum < 21) {
-  console.log("Do you want to draw another card ? 😀")
-} else if (sum === 21) {
-  console.log("GG 🤩")  
-} else if (sum > 21) {
-  console.log("You lost 😭")
+function startGame() {
+  if (sum <= 20) {
+    message = "Do you want to draw another card ? 😀"
+  } else if (sum === 21) {
+    message = "GG 🤩"
+    hasBlackJack = true 
+  } else {
+    message = "You lost 😭"
+    isAlive = false
+  }
+  console.log(message)
 }
-
