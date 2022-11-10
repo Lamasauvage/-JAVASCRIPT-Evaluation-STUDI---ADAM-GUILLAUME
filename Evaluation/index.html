@@ -3,6 +3,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/581a2c77be.js" crossorigin="anonymous"></script>
+    
   </head>
 
   <body>
@@ -13,16 +14,19 @@
 
     <div class="player-tag">
       <h2 id="player1">PLAYER 1</h2>
-      <h3 id="save-el-player1">0</h3> 
+      <h3 id="global-count">0</h3> 
       <p id="count-el">CURRENT: </p>
 
       <h2 id="player2">PLAYER 2</h2>
-      <h3 id="save-el-player2">0</h3>
+      <h3 id="global-count">0</h3>
       <p id="count-el">CURRENT: </p> 
     </div>
 
-    <button onclick="">ROLL DICE</button>
+    <button id="roll-dice" onclick="getRandomDiceNumber()">ROLL DICE</button>
     <button onclick="">HOLD</button>
+    <script src="index.js"></script>
+
+    <p id="roll-result">Résultat du roll dice :  </p> <!-- Ajouter le résultat du roll dice sous forme de dé -->
 
 
 
