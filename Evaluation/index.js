@@ -20,6 +20,8 @@ function rollDice() {
   renderGame()
 }
 
+// Display the result 
+
 function renderGame() {
   rollDiceResult.textContent = "Result: " + roll
 }
