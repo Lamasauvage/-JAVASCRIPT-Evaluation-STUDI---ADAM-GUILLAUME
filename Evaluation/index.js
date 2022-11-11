@@ -1,6 +1,5 @@
 let rollDiceResult = document.getElementById("roll-dice-result")
 
-
 // Generate random number
 
 function getRandomDiceNumber() {
@@ -17,11 +16,12 @@ function getRandomDiceNumber() {
 function rollDice() {
   let rollNumber = getRandomDiceNumber()
   roll = rollNumber
+
   renderGame()
 }
 
-// Display the result 
+// Display the result
 
 function renderGame() {
-  rollDiceResult.textContent = "Result: " + roll
+  rollDiceResult.innerHTML = roll
 }
