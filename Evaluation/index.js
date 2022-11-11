@@ -1,14 +1,21 @@
-// let saveEl = document.getElementById(global-count)
-// let countEl = document.getElementById(count-el)
-// let count = 0 
+let roll = []
+let rollDiceResult = document.getElementById("roll-dice-result")
+
+// Generate random number 
 
 function getRandomDiceNumber() {
   let randomNumber = Math.floor( Math.random()*6 ) + 1
   if (randomNumber === 1) {
-    console.log(0)
-      return 0 // 0 = perte de tous les points 
+      return 0 // 0 = perte de tous les points
   } else {
     console.log(randomNumber)
-      return randomNumber 
-  } 
+      return randomNumber
+  }
+}
+
+// Roll the dice once
+
+function rollDice() {
+  let rollNumber = getRandomDiceNumber()
+  roll = rollNumber
 }
