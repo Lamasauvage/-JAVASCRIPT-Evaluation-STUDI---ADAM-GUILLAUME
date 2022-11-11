@@ -1,14 +1,13 @@
-let roll = []
 let rollDiceResult = document.getElementById("roll-dice-result")
 
-// Generate random number 
+
+// Generate random number
 
 function getRandomDiceNumber() {
   let randomNumber = Math.floor( Math.random()*6 ) + 1
   if (randomNumber === 1) {
       return 0 // 0 = perte de tous les points
   } else {
-    console.log(randomNumber)
       return randomNumber
   }
 }
@@ -18,4 +17,9 @@ function getRandomDiceNumber() {
 function rollDice() {
   let rollNumber = getRandomDiceNumber()
   roll = rollNumber
+  renderGame()
+}
+
+function renderGame() {
+  rollDiceResult.textContent = "Result: " + roll
 }
