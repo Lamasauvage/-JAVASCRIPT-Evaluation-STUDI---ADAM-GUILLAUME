@@ -1,6 +1,7 @@
 let round = 0
 let rollDiceResult = document.getElementById("roll-dice-result")
 let roundPlayerOne = document.getElementById("round-player-one")
+let roundPlayerTwo = document.getElementById("round-player-two")
 let messageEl = document.getElementById("message-el")
 
 
@@ -18,8 +19,8 @@ function getRandomDiceNumber() {
 // Roll the dice once
 
 function rollDice() {
-  let rollNumber = getRandomDiceNumber()
-  roll = rollNumber
+  let roll = getRandomDiceNumber()
+  rollNumber = roll
 
   renderGame()
 }
@@ -27,13 +28,22 @@ function rollDice() {
 // Display the result
 
 function renderGame() {
-  rollDiceResult.innerHTML = roll
+  rollDiceResult.innerHTML = rollNumber
 
-  round += roll
+//Display the result in the round player
+
+  round += rollNumber
   roundPlayerOne.textContent = round
 
+// Make player lost all points if roll 1
 
-  if (roll === 1) {
+  if (rollNumber === 1) {
+    round = 0
+  }
+
+// Msg if the player roll a 1 ! MAKE A ALERTE = BETTER
+
+  if (rollNumber === 1) {
     message = "You lost all your points, better luck next time"
   } else {
     message = ""
@@ -41,7 +51,5 @@ function renderGame() {
   messageEl.textContent = message
 }
 
-// Ajouter le result du roll dice au current du player1 / Prendre le résultat du roll et l'ajouter au round player 1
-// Si roll = 1 / round over + roundnumber = 0
 
 
