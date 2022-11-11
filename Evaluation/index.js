@@ -1,7 +1,10 @@
 let round = 0
+
 let rollDiceResult = document.getElementById("roll-dice-result")
 let roundPlayerOne = document.getElementById("round-player-one")
 let roundPlayerTwo = document.getElementById("round-player-two")
+let totalPlayerOne = document.getElementById("total-player-one")
+let totalPlayerTwo = document.getElementById("total-player-two")
 let messageEl = document.getElementById("message-el")
 
 
@@ -9,11 +12,8 @@ let messageEl = document.getElementById("message-el")
 
 function getRandomDiceNumber() {
   let randomNumber = Math.floor( Math.random()*6 ) + 1
-  if (randomNumber === 1) {
-      return 1 // 1 = perte de tous les points
-  } else {
       return randomNumber
-  }
+
 }
 
 // Roll the dice once
@@ -25,17 +25,15 @@ function rollDice() {
   renderGame()
 }
 
-// Display the result
+//Display the result in the round player
 
 function renderGame() {
   rollDiceResult.innerHTML = rollNumber
 
-//Display the result in the round player
-
   round += rollNumber
-  roundPlayerOne.textContent = round
+  roundPlayerOne.textContent = "ROUND: " + round
 
-// Make player lost all points if roll 1
+// Make player1 lost all points if roll 1 and then make player2 roll, etc...
 
   if (rollNumber === 1) {
     round = 0
@@ -51,5 +49,10 @@ function renderGame() {
   messageEl.textContent = message
 }
 
+// Function HOLD = player keep the round count and put it in the total points section
+
+  function hold() {
+    totalPlayerOne.textContent = round
+  }
 
 
