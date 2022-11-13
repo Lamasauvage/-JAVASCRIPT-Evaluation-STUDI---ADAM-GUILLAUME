@@ -1,5 +1,6 @@
 let round = 0
 
+
 let rollDiceResult = document.getElementById("roll-dice-result")
 let roundPlayerOne = document.getElementById("round-player-one")
 let roundPlayerTwo = document.getElementById("round-player-two")
@@ -16,7 +17,7 @@ function getRandomDiceNumber() {
 
 }
 
-// Roll the dice once
+// Roll the dice once for player1
 
 function rollDice() {
   let roll = getRandomDiceNumber()
@@ -49,10 +50,13 @@ function renderGame() {
   messageEl.textContent = message
 }
 
-// Function HOLD = player keep the round count and put it in the total points section
+// Function HOLD = player keep the round count and put it in the total points section 
+// Keep the total point and add up round point
 
   function hold() {
-    totalPlayerOne.textContent = round
+    totalPlayerOne.textContent = parseInt(totalPlayerOne.textContent,10) + round
+
+  
   }
 
 
