@@ -36,6 +36,8 @@ function renderGame() {
 
 // Make player1 lost all points if roll 1 and then make player2 roll, etc...
 
+// Faire une boucle WHILE (BREAK ?) => Continue d'add le compteur de Round TANT QUE roll number ≠ 1 soit [2 à 6] (à voir comment l'écrire) et display un message pour le joueur 2 qui commence son tour
+
   if (rollNumber === 1) {
     round = 0
   }
@@ -54,16 +56,17 @@ function renderGame() {
 // Keep the total point and add up round point
 
 function hold() {
-    totalPlayerOne.textContent = parseInt(totalPlayerOne.textContent,10) + round
-  }
+  totalPlayerOne.textContent = parseInt(totalPlayerOne.textContent,10) + round
 
-// Display a alert/message when player reach 100 or more points and end (NOT WORKING)
-  winMessage.textContent = winMessage
+// Display a alert/message when player reach 100 or more points and end game(NOT WORKING !!!)
+
   if (totalPlayerOne >= 100) {
     winMessage = "You won"
   } else {
     winMessage = ""
   }
+  winMessage.textContent = winMessage
+}
 
 
 
