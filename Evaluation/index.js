@@ -1,12 +1,12 @@
 let round = 0
 
-
 let rollDiceResult = document.getElementById("roll-dice-result")
 let roundPlayerOne = document.getElementById("round-player-one")
 let roundPlayerTwo = document.getElementById("round-player-two")
 let totalPlayerOne = document.getElementById("total-player-one")
 let totalPlayerTwo = document.getElementById("total-player-two")
 let messageEl = document.getElementById("message-el")
+let winMessage = document.getElementById("win-message")
 
 
 // Generate random number
@@ -50,13 +50,21 @@ function renderGame() {
   messageEl.textContent = message
 }
 
-// Function HOLD = player keep the round count and put it in the total points section 
+// Function HOLD = player keep the round count and put it in the total points section
 // Keep the total point and add up round point
 
-  function hold() {
+function hold() {
     totalPlayerOne.textContent = parseInt(totalPlayerOne.textContent,10) + round
-
-  
   }
+
+// Display a alert/message when player reach 100 or more points and end (NOT WORKING)
+  winMessage.textContent = winMessage
+  if (totalPlayerOne >= 100) {
+    winMessage = "You won"
+  } else {
+    winMessage = ""
+  }
+
+
 
 
