@@ -59,7 +59,7 @@ function hold() {
   let totalNumber = parseInt(totalPlayerOne.textContent,10) + round
   totalPlayerOne.textContent = totalNumber
 
-// Display a alert/message when player reach 100 or more points and end game(NOT WORKING !!!)
+// Display a alert/message when player reach 100 or more points and end game
   let winMessageEl;
   if (totalNumber >= 100) {
     winMessageEl = "You won"
