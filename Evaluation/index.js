@@ -56,16 +56,18 @@ function renderGame() {
 // Keep the total point and add up round point
 
 function hold() {
-  totalPlayerOne.textContent = parseInt(totalPlayerOne.textContent,10) + round
+  let test = parseInt(totalPlayerOne.textContent,10) + round
+  totalPlayerOne.textContent = test
 
 // Display a alert/message when player reach 100 or more points and end game(NOT WORKING !!!)
 
-  if (totalPlayerOne >= 100) {
-    winMessage = "You won"
+  let winWinMessage; //get a new name for this 
+  if (test >= 100) {
+    winWinMessage = "You won"
   } else {
-    winMessage = ""
+    winWinMessage = ""
   }
-  winMessage.textContent = winMessage
+  winMessage.textContent = winWinMessage
 }
 
 
