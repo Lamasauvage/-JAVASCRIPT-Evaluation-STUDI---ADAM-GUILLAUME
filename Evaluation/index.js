@@ -1,6 +1,6 @@
 let round = 0
-let activePlayer;
 let player1Turn = true
+let player2Turn;
 
 let rollDice = document.getElementById("roll-dice")
 let rollDiceResult = document.getElementById("roll-dice-result")
@@ -37,26 +37,23 @@ function renderGame() {
   rollDiceResult.innerHTML = rollNumber
   round += rollNumber
 
+// Si le joueur 1 joue ET que le résultat de randomNumber n'est pas égal à 1, ALORS tous les "round" se cumulent dans "roundPlayerOne"
+// Par contre, SI le joueur roll un 1, alors il perd tous les points et le resultat du round = 0 
+// Le tour du joueur 2 commence et les mêmes conditions s'appliquent
+ 
   if (player1Turn){
+
     if (rollNumber !== 1) {
       roundPlayerOne.textContent = "ROUND: " + round
+
     } else if (rollNumber === 1) {
       round = 0
       roundPlayerOne.textContent = "ROUND: " + 0
+      alert("Player 2 turn !")
     }
 
-  //} else {
-  //  roundPlayerTwo.textContent = "ROUND: " + round
-  }
 
- 
-
-// Make player1 lost all points if roll 1 and then make player2 roll, etc...
-
-// Faire une boucle WHILE (BREAK ?) => Continue d'add le compteur de Round TANT QUE roll number ≠ 1 soit [2 à 6] (à voir comment l'écrire) et display un message pour le joueur 2 qui commence son tour
-
-
-// Msg if the player roll a 1 ! MAKE A ALERTE = BETTER
+// Message en cas de roll 1 (Temporaire)
 
   if (rollNumber === 1) {
     message = "You lost all your points"
@@ -64,7 +61,7 @@ function renderGame() {
     message = ""
   }
   messageEl.textContent = message
-}
+}}
 
 // Function HOLD = player keep the round count and put it in the total points section
 // Keep the total point and add up round point
@@ -93,7 +90,6 @@ function hold() {
   }
   winMessage.textContent = winMessageEl
 }
-
 
 
 // Faire une boucle qui se résume à : Si le P1 roll un 1 ou HOLD, début du round pour le joueur 2
