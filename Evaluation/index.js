@@ -1,5 +1,8 @@
 let round = 0
+let activePlayer;
+let player1Turn = true
 
+let rollDice = document.getElementById("roll-dice")
 let rollDiceResult = document.getElementById("roll-dice-result")
 let roundPlayerOne = document.getElementById("round-player-one")
 let roundPlayerTwo = document.getElementById("round-player-two")
@@ -9,17 +12,18 @@ let messageEl = document.getElementById("message-el")
 let winMessage = document.getElementById("win-message")
 
 
+// document.getElementById("roll-dice").addEventListener('click', function() {}
+
 // Generate random number
 
 function getRandomDiceNumber() {
   let randomNumber = Math.floor( Math.random()*6 ) + 1
-      return randomNumber
-
+    return randomNumber
 }
 
-// Roll the dice once for player1
+// Roll the dice once
 
-function rollDice() {
+function diceRoll() {
   let roll = getRandomDiceNumber()
   rollNumber = roll
 
@@ -29,23 +33,32 @@ function rollDice() {
 //Display the result in the round player
 
 function renderGame() {
-  rollDiceResult.innerHTML = rollNumber
 
+  rollDiceResult.innerHTML = rollNumber
   round += rollNumber
-  roundPlayerOne.textContent = "ROUND: " + round
+
+  if (player1Turn){
+    roundPlayerOne.textContent = "ROUND: " + round
+    if (rollNumber === 1) {
+      round = 0
+      roundPlayerOne.textContent = "ROUND: " + 0
+    }
+
+  //} else {
+  //  roundPlayerTwo.textContent = "ROUND: " + round
+  }
+
+ 
 
 // Make player1 lost all points if roll 1 and then make player2 roll, etc...
 
 // Faire une boucle WHILE (BREAK ?) => Continue d'add le compteur de Round TANT QUE roll number ≠ 1 soit [2 à 6] (à voir comment l'écrire) et display un message pour le joueur 2 qui commence son tour
 
-  if (rollNumber === 1) {
-    round = 0
-  }
 
 // Msg if the player roll a 1 ! MAKE A ALERTE = BETTER
 
   if (rollNumber === 1) {
-    message = "You lost all your points, better luck next time"
+    message = "You lost all your points"
   } else {
     message = ""
   }
@@ -56,10 +69,21 @@ function renderGame() {
 // Keep the total point and add up round point
 
 function hold() {
-  let totalNumber = parseInt(totalPlayerOne.textContent,10) + round
-  totalPlayerOne.textContent = totalNumber
+
+  let totalNumberPlayerOne = parseInt(totalPlayerOne.textContent,10) + round
+  let totalNumberPlayerTwo = parseInt(totalPlayerTwo.textContent,10) + round
+
+  if (player1Turn){
+    totalPlayerOne.textContent = totalNumberPlayerOne
+
+  } else {
+    totalPlayerTwo.textContent = totalNumberPlayerTwo
+  }
+  
+
 
 // Display a alert/message when player reach 100 or more points and end game
+
   let winMessageEl;
   if (totalNumber >= 100) {
     winMessageEl = "You won"
@@ -71,4 +95,5 @@ function hold() {
 
 
 
+// Faire une boucle qui se résume à : Si le P1 roll un 1 ou HOLD, début du round pour le joueur 2
 
