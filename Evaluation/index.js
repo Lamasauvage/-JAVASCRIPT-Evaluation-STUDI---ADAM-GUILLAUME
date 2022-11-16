@@ -40,6 +40,19 @@ function renderGame() {
 // Si le joueur 1 joue ET que le résultat de randomNumber n'est pas égal à 1, ALORS tous les "round" se cumulent dans "roundPlayerOne"
 // Par contre, SI le joueur roll un 1, alors il perd tous les points et le resultat du round = 0 
 // Le tour du joueur 2 commence et les mêmes conditions s'appliquent
+
+ /* boolean playerOne = true;
+boolean haveWinner = false;
+
+while (!haveWinner) {   
+    if (playerOne) {
+        //player one's turn - do something //
+        playerOne = false;
+    } else {
+        // player two's turn - do something //
+        playerOne = true;
+    }
+} */
  
   if (player1Turn){
 
