@@ -38,8 +38,9 @@ function renderGame() {
   round += rollNumber
 
   if (player1Turn){
-    roundPlayerOne.textContent = "ROUND: " + round
-    if (rollNumber === 1) {
+    if (rollNumber !== 1) {
+      roundPlayerOne.textContent = "ROUND: " + round
+    } else if (rollNumber === 1) {
       round = 0
       roundPlayerOne.textContent = "ROUND: " + 0
     }
