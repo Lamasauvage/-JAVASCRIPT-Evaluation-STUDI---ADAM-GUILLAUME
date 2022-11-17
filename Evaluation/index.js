@@ -1,16 +1,19 @@
 
-let rollDice = document.getElementById("roll-dice");
+const rollDice = document.getElementById("roll-dice");
 
-let rollDiceResult = document.getElementById("roll-dice-result");
+const rollDiceResult = document.getElementById("roll-dice-result");
 
-let roundPlayer0 = document.getElementById("current--0");
-let roundPlayer1 = document.getElementById("current--1");
+const roundPlayer0 = document.getElementById("current--0");
+const roundPlayer1 = document.getElementById("current--1");
 
-let totalPlayer0 = document.getElementById("total-player-0");
-let totalPlayer1 = document.getElementById("total-player-1");
+const totalPlayer0 = document.getElementById("total-player-0");
+const totalPlayer1 = document.getElementById("total-player-1");
 
-let messageEl = document.getElementById("message-el");
-let winMessage = document.getElementById("win-message");
+const messageEl = document.getElementById("message-el");
+const winMessage = document.getElementById("win-message");
+
+const player0El = document.querySelector(".player--0")
+const player1El = document.querySelector(".player--1")
 
 totalPlayer0.textContent = 0
 totalPlayer1.textContent = 0
@@ -42,19 +45,20 @@ function renderGame() {
 
   rollDiceResult.innerHTML = rollNumber
  
-// Si le joueur 1 joue ET que le résultat de randomNumber n'est pas égal à 1, ALORS tous les "round" se cumulent dans "roundPlayerOne"
-// Par contre, SI le joueur roll un 1, alors il perd tous les points et le resultat du round = 0 
-// Le tour du joueur 2 commence et les mêmes conditions s'appliquent
- 
   if (rollNumber !== 1 ){
     // Add the dice result to the round of active player
     round += rollNumber
     document.getElementById(`current--${activePlayer}`).textContent = round
 
   } else {
+    // Set the player round to 0 because he rolled a 1
+    document.getElementById(`current--${activePlayer}`).textContent = 0
     // Switch player
     activePlayer = activePlayer === 0 ? 1 : 0
-    }
+    round = 0
+    player0El.classList.toggle("player--active")
+    player1El.classList.toggle("player--active")
+  }
 
 
 // Message en cas de roll 1 (Temporaire)
