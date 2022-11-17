@@ -1,25 +1,38 @@
-let round = 0
 
-let rollDiceResult = document.getElementById("roll-dice-result")
-let roundPlayerOne = document.getElementById("round-player-one")
-let roundPlayerTwo = document.getElementById("round-player-two")
-let totalPlayerOne = document.getElementById("total-player-one")
-let totalPlayerTwo = document.getElementById("total-player-two")
-let messageEl = document.getElementById("message-el")
-let winMessage = document.getElementById("win-message")
+const rollDice = document.getElementById("roll-dice");
 
+const rollDiceResult = document.getElementById("roll-dice-result");
+
+const roundPlayer0 = document.getElementById("current--0");
+const roundPlayer1 = document.getElementById("current--1");
+
+const totalPlayer0 = document.getElementById("total-player-0");
+const totalPlayer1 = document.getElementById("total-player-1");
+
+const messageEl = document.getElementById("message-el");
+const winMessage = document.getElementById("win-message");
+
+const player0El = document.querySelector(".player--0")
+const player1El = document.querySelector(".player--1")
+
+totalPlayer0.textContent = 0
+totalPlayer1.textContent = 0
+let round = 0;
+let activePlayer = 0;
+const scores = [0,0];
+
+// document.getElementById("roll-dice").addEventListener('click', function() {}
 
 // Generate random number
 
 function getRandomDiceNumber() {
-  let randomNumber = Math.floor( Math.random()*6 ) + 1
-      return randomNumber
-
+  const randomNumber = Math.floor( Math.random()*6 ) + 1
+    return randomNumber
 }
 
-// Roll the dice once for player1
+// Roll the dice once
 
-function rollDice() {
+function diceRoll() {
   let roll = getRandomDiceNumber()
   rollNumber = roll
 
@@ -29,23 +42,29 @@ function rollDice() {
 //Display the result in the round player
 
 function renderGame() {
+
   rollDiceResult.innerHTML = rollNumber
+ 
+  if (rollNumber !== 1 ){
+    // Add the dice result to the round of active player
+    round += rollNumber
+    document.getElementById(`current--${activePlayer}`).textContent = round
 
-  round += rollNumber
-  roundPlayerOne.textContent = "ROUND: " + round
-
-// Make player1 lost all points if roll 1 and then make player2 roll, etc...
-
-// Faire une boucle WHILE (BREAK ?) => Continue d'add le compteur de Round TANT QUE roll number ≠ 1 soit [2 à 6] (à voir comment l'écrire) et display un message pour le joueur 2 qui commence son tour
-
-  if (rollNumber === 1) {
+  } else {
+    // Set the player round to 0 because he rolled a 1
+    document.getElementById(`current--${activePlayer}`).textContent = 0
+    // Switch player
+    activePlayer = activePlayer === 0 ? 1 : 0
     round = 0
+    player0El.classList.toggle("player--active")
+    player1El.classList.toggle("player--active")
   }
 
-// Msg if the player roll a 1 ! MAKE A ALERTE = BETTER
+
+// Message en cas de roll 1 (Temporaire)
 
   if (rollNumber === 1) {
-    message = "You lost all your points, better luck next time"
+    message = "You lost all your points"
   } else {
     message = ""
   }
@@ -56,10 +75,21 @@ function renderGame() {
 // Keep the total point and add up round point
 
 function hold() {
-  let totalNumber = parseInt(totalPlayerOne.textContent,10) + round
-  totalPlayerOne.textContent = totalNumber
+
+  let totalNumberPlayerOne = parseInt(totalPlayerOne.textContent,10) + round
+  let totalNumberPlayerTwo = parseInt(totalPlayerTwo.textContent,10) + round
+
+  if (player1Turn){
+    totalPlayerOne.textContent = totalNumberPlayerOne
+
+  } else {
+    totalPlayerTwo.textContent = totalNumberPlayerTwo
+  }
+  
+
 
 // Display a alert/message when player reach 100 or more points and end game
+
   let winMessageEl;
   if (totalNumber >= 100) {
     winMessageEl = "You won"
@@ -70,5 +100,5 @@ function hold() {
 }
 
 
-
+// Faire une boucle qui se résume à : Si le P1 roll un 1 ou HOLD, début du round pour le joueur 2
 
