@@ -39,6 +39,17 @@ function diceRoll() {
   renderGame()
 }
 
+// Switch player
+
+function switchPlayer() {
+  document.getElementById(`current--${activePlayer}`).textContent = 0
+    // Switch player
+    activePlayer = activePlayer === 0 ? 1 : 0
+    round = 0
+    player0El.classList.toggle("player--active")
+    player1El.classList.toggle("player--active")
+}
+
 //Display the result in the round player
 
 function renderGame() {
@@ -51,13 +62,7 @@ function renderGame() {
     document.getElementById(`current--${activePlayer}`).textContent = round
 
   } else {
-    // Set the player round to 0 because he rolled a 1
-    document.getElementById(`current--${activePlayer}`).textContent = 0
-    // Switch player
-    activePlayer = activePlayer === 0 ? 1 : 0
-    round = 0
-    player0El.classList.toggle("player--active")
-    player1El.classList.toggle("player--active")
+    switchPlayer()
   }
 
 
@@ -71,25 +76,31 @@ function renderGame() {
   messageEl.textContent = message
 }
 
-// Function HOLD = player keep the round count and put it in the total points section
-// Keep the total point and add up round point
+
+// Function HOLD = player keep the round/current count and put it in the total points section
 
 function hold() {
 
+  // Add the round active player's score to his total
   scores[activePlayer] += round
   document.getElementById(`total-player--${activePlayer}`).textContent = scores[activePlayer]
 
-// Display a alert/message when player reach 100 or more points and end game
-
-  let winMessageEl;
-  if (totalNumber >= 100) {
+  // Check if total > 100
+  let winMessageEl
+  if (scores[activePlayer] >= 100)
     winMessageEl = "You won"
-  } else {
-    winMessageEl = ""
-  }
+
   winMessage.textContent = winMessageEl
+  // True : Game end
+
+  // False : Switch player
+  switchPlayer()
 }
 
 
-// Faire une boucle qui se résume à : Si le P1 roll un 1 ou HOLD, début du round pour le joueur 2
+// Function New Game = reset all score to 0
+
+function newGame() {
+
+}
 
