@@ -6,8 +6,8 @@ const rollDiceResult = document.getElementById("roll-dice-result");
 const roundPlayer0 = document.getElementById("current--0");
 const roundPlayer1 = document.getElementById("current--1");
 
-const totalPlayer0 = document.getElementById("total-player-0");
-const totalPlayer1 = document.getElementById("total-player-1");
+const totalPlayer0 = document.getElementById("total-player--0");
+const totalPlayer1 = document.getElementById("total-player--1");
 
 const messageEl = document.getElementById("message-el");
 const winMessage = document.getElementById("win-message");
@@ -76,17 +76,8 @@ function renderGame() {
 
 function hold() {
 
-  let totalNumberPlayerOne = parseInt(totalPlayerOne.textContent,10) + round
-  let totalNumberPlayerTwo = parseInt(totalPlayerTwo.textContent,10) + round
-
-  if (player1Turn){
-    totalPlayerOne.textContent = totalNumberPlayerOne
-
-  } else {
-    totalPlayerTwo.textContent = totalNumberPlayerTwo
-  }
-  
-
+  scores[activePlayer] += round
+  document.getElementById(`total-player--${activePlayer}`).textContent = scores[activePlayer]
 
 // Display a alert/message when player reach 100 or more points and end game
 
