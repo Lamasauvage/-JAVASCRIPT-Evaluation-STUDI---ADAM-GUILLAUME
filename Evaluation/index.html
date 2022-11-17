@@ -20,15 +20,19 @@
     <div id="win-message"></div><br>
     <button id="new-game" onclick="">NEW GAME</button>
 
-    <div class="player-tag">
-      
-      <h2 id="player1">PLAYER 1</h2>
-      <h3 id="total-player-one">0</h3> 
-      <p id="round-player-one">ROUND: </p>
+    <section class="player player--0 player--active">
+      <h2 id="name--0">PLAYER 1</h2>
+      <div class="current">
+        <h3 id="total-player-0">0</h3> 
+        <p id="current--0">ROUND: </p>
+      </div>
+    </section>
 
-      <h2 id="player2">PLAYER 2</h2>
-      <h3 id="total-player-two">0</h3>
-      <p id="round-player-two">ROUND: </p> 
+    <section class="player player--1">
+      <h2 id="name--1">PLAYER 2</h2>
+      <div class="current">
+        <h3 id="total-player-1">0</h3>
+        <p id="current--1">ROUND: </p> 
     </div>
 
     <button class="roll-dice" onclick="diceRoll()">ROLL DICE</button>

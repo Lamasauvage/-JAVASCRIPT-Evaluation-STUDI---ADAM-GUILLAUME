@@ -1,23 +1,29 @@
-let round = 0
-let player1Turn = true
-let player2Turn;
 
-let rollDice = document.getElementById("roll-dice")
-let rollDiceResult = document.getElementById("roll-dice-result")
-let roundPlayerOne = document.getElementById("round-player-one")
-let roundPlayerTwo = document.getElementById("round-player-two")
-let totalPlayerOne = document.getElementById("total-player-one")
-let totalPlayerTwo = document.getElementById("total-player-two")
-let messageEl = document.getElementById("message-el")
-let winMessage = document.getElementById("win-message")
+let rollDice = document.getElementById("roll-dice");
 
+let rollDiceResult = document.getElementById("roll-dice-result");
+
+let roundPlayer0 = document.getElementById("current--0");
+let roundPlayer1 = document.getElementById("current--1");
+
+let totalPlayer0 = document.getElementById("total-player-0");
+let totalPlayer1 = document.getElementById("total-player-1");
+
+let messageEl = document.getElementById("message-el");
+let winMessage = document.getElementById("win-message");
+
+totalPlayer0.textContent = 0
+totalPlayer1.textContent = 0
+let round = 0;
+let activePlayer = 0;
+const scores = [0,0];
 
 // document.getElementById("roll-dice").addEventListener('click', function() {}
 
 // Generate random number
 
 function getRandomDiceNumber() {
-  let randomNumber = Math.floor( Math.random()*6 ) + 1
+  const randomNumber = Math.floor( Math.random()*6 ) + 1
     return randomNumber
 }
 
@@ -35,34 +41,19 @@ function diceRoll() {
 function renderGame() {
 
   rollDiceResult.innerHTML = rollNumber
-  round += rollNumber
-
+ 
 // Si le joueur 1 joue ET que le résultat de randomNumber n'est pas égal à 1, ALORS tous les "round" se cumulent dans "roundPlayerOne"
 // Par contre, SI le joueur roll un 1, alors il perd tous les points et le resultat du round = 0 
 // Le tour du joueur 2 commence et les mêmes conditions s'appliquent
-
- /* boolean playerOne = true;
-boolean haveWinner = false;
-
-while (!haveWinner) {   
-    if (playerOne) {
-        //player one's turn - do something //
-        playerOne = false;
-    } else {
-        // player two's turn - do something //
-        playerOne = true;
-    }
-} */
  
-  if (player1Turn){
+  if (rollNumber !== 1 ){
+    // Add the dice result to the round of active player
+    round += rollNumber
+    document.getElementById(`current--${activePlayer}`).textContent = round
 
-    if (rollNumber !== 1) {
-      roundPlayerOne.textContent = "ROUND: " + round
-
-    } else if (rollNumber === 1) {
-      round = 0
-      roundPlayerOne.textContent = "ROUND: " + 0
-      alert("Player 2 turn !")
+  } else {
+    // Switch player
+    activePlayer = activePlayer === 0 ? 1 : 0
     }
 
 
@@ -74,7 +65,7 @@ while (!haveWinner) {
     message = ""
   }
   messageEl.textContent = message
-}}
+}
 
 // Function HOLD = player keep the round count and put it in the total points section
 // Keep the total point and add up round point
