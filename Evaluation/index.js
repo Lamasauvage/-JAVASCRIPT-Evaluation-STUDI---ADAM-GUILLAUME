@@ -1,19 +1,20 @@
 
-const rollDice = document.getElementById("roll-dice");
+const rollDice = document.getElementById("roll-dice")
 
-const rollDiceResult = document.getElementById("roll-dice-result");
+const diceDisplay = document.querySelector(`.dice`)
+const rollDiceResult = document.getElementById("roll-dice-result")
 
 const player0El = document.querySelector(".player--0")
 const player1El = document.querySelector(".player--1")
 
-const roundPlayer0 = document.getElementById("current--0");
-const roundPlayer1 = document.getElementById("current--1");
+const roundPlayer0 = document.getElementById("current--0")
+const roundPlayer1 = document.getElementById("current--1")
 
-const totalPlayer0 = document.getElementById("total-player--0");
-const totalPlayer1 = document.getElementById("total-player--1");
+const totalPlayer0 = document.getElementById("total-player--0")
+const totalPlayer1 = document.getElementById("total-player--1")
 
-const messageEl = document.getElementById("message-el");
-const winMessage = document.getElementById("win-message");
+const messageEl = document.getElementById("message-el")
+const winMessage = document.getElementById("win-message")
 
 
 totalPlayer0.textContent = 0
@@ -23,6 +24,8 @@ let winMessageEl
 let round = 0;
 let activePlayer = 0;
 const scores = [0,0];
+
+diceDisplay.classList.add("hidden")
 
 // document.getElementById("roll-dice").addEventListener('click', function() {}
 
@@ -58,7 +61,10 @@ function switchPlayer() {
 
 function renderGame() {
 
-  rollDiceResult.innerHTML = rollNumber
+  // Display the dice number
+  diceDisplay.classList.remove("hidden")
+  diceDisplay.src=`images/dice${rollNumber}.png`
+
 
   if (rollNumber !== 1 ){
     // Add the dice result to the round of active player
