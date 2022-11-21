@@ -32,15 +32,14 @@ diceDisplay.classList.add("hidden")
 // Generate random number
 
 function getRandomDiceNumber() {
-  const randomNumber = Math.floor( Math.random()*6 ) + 1
-    return randomNumber
+  return Math.floor( Math.random()*6 ) + 1
+ 
 }
 
 // Roll the dice once
 
 function diceRoll() {
-  let roll = getRandomDiceNumber()
-  rollNumber = roll
+  rollNumber = getRandomDiceNumber()
 
   renderGame()
 }
@@ -109,10 +108,10 @@ function hold() {
 
 // Function New Game = reset all score to 0
 
-/* function newGame() {
+ function newGame() {
   totalPlayer0.textContent = 0
   totalPlayer1.textContent = 0
   roundPlayer0.textContent = 0
   roundPlayer1.textContent = 0
   rollDiceResult.innerHTML = 0
-}*/
+}
