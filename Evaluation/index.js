@@ -113,4 +113,9 @@ function hold() {
   roundPlayer0.textContent = 0
   roundPlayer1.textContent = 0
   rollDiceResult.innerHTML = 0
+  round = 0;
+  activePlayer = 0;
+  scores = [0,0];
+  diceDisplay.classList.add("hidden")
+
 }

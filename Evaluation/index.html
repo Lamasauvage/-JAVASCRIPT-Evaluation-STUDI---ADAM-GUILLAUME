@@ -10,18 +10,19 @@
   </head>
 
   <header class="header">
-    <h1><i class='fas fa-dice' style='font-size:70px;color:red'></i>The Dice Game</h1>
+    <h1><i class='fas fa-dice' style='font-size:70px;color:red;padding-right:25px;'></i>The Dice Game</h1>
   </header>
 
   <body>
 
     <div id="win-message"></div><br>
-    <button class="bg-blue-500 font-bold py-2 px-4 rounded-full" id="new-game" onclick="newGame()"><i class="fa-solid fa-circle-plus"></i>NEW GAME</button>
 
-    <div class="mt-8 grid grid-cols-2 gap-10">
+    <button class="bg-white-500 font-bold py-2 px-4 rounded-full" id="new-game" onclick="newGame()"><i class="fa-solid fa-circle-plus" style="padding-right:20px;color:red"></i>NEW GAME</button>
+
+    <div class="mt-8 grid grid-cols-2 gap-6 justify-items-center">
       <section class="player player--0 player--active">
         <h2 id="name--0">PLAYER 1</h2>
-        <h3 class="total" id="total-player--0">0</h3> 
+        <h3 class="total" id="total-player--0">0</h3>
         <div class="current">
           <p class="current-el">Current</p>
           <p class="current-score" id="current--0">0</p>
@@ -33,19 +34,19 @@
         <h3 class="total" id="total-player--1">0</h3>
         <div class="current">
           <p class="current-el">Current</p>
-          <p class="current-score" id="current--1">0</p> 
+          <p class="current-score" id="current--1">0</p>
         </div>
       </section>
     </div>
 
-    <button class="bg-blue-500 font-bold py-2 px-4 rounded-full" id="btn-roll" class="roll-dice" onclick="diceRoll()"><i class='fas fa-sync-alt fa-spin'></i>ROLL DICE</button>
+    <button class="bg-white-500 font-bold py-2 px-4 rounded-full" id="btn-roll" class="roll-dice" onclick="diceRoll()"><i class="fas fa-sync-alt" style="padding-right:20px;color:red"></i>ROLL DICE</button>
 
-    <button class="bg-blue-500 font-bold py-2 px-4 rounded-full" id="btn-hold" onclick="hold()"><i class="fa-regular fa-circle-down"></i>HOLD</button>
+    <button class="bg-white-500 font-bold py-2 px-4 rounded-full" id="btn-hold" onclick="hold()"><i class="fa-regular fa-circle-down" style="padding-right:20px;color:red"></i>HOLD</button>
 
     <p id="message-el"></p>
     <p id="roll-dice-result"></p>
     <img src="images/dice1.png" alt="playing dice" class="dice" />
-    
+
     <script src="index.js"></script>
 
   </body>
