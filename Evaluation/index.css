@@ -6,13 +6,16 @@
   font-family: "Lato", sans-serif;
 }
 
+body {
+}
+
 /* TITLE */
 
 .header {
   text-align: center;
   text-transform: uppercase;
   margin-top: 50px;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: bold;
 }
 
@@ -20,28 +23,86 @@
   padding-right: 15px;
 }
 
-/* PLAYER 1 */
+/* NEW GAME BUTTON */
+
+.bg-blue-500 {
+  text-align: center;
+}
+
+
+/* PLAYER SECTION */
 
 .player {
   text-align: center;
-  font-size: 35px;
+  font-size: 50px;
 }
 
 #name--0, #name--1 {
-  color: lightblue;
-  font-weight: bold;
+  color: black;
 }
 
+/* TOTAL POINTS */
 
-.button {
-  display: inline-block;
+h3 {
+  color: red;
+  font-size: 100px;
+}
+
+/* CURRENT POINTS */
+
+.current {
+  background-color: #F08080;
+  text-align: center;
+  width: 200px;
+}
+
+.current-el {
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 30px;
   text-align: center;
 }
 
+.current-score {
+  font-size: 65px;
+  color: #FFFFFF;
+}
+
+
 .fa-solid {
   color: red;
+  text-align: center;
 }
 
 .hidden {
   display: none;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  height: 10rem;
+}
+
+.bg-blue-500 {
+  position: absolute;
+  left: 45%;
+  color:#000000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+#btn-roll {
+  top: 65%;
+}
+
+#btn-hold {
+  top: 75%;
+  left: 47.5%
 }

@@ -33,7 +33,6 @@ diceDisplay.classList.add("hidden")
 
 function getRandomDiceNumber() {
   return Math.floor( Math.random()*6 ) + 1
- 
 }
 
 // Roll the dice once
