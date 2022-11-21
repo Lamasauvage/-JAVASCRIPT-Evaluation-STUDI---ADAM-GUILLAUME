@@ -6,7 +6,23 @@
   font-family: "Lato", sans-serif;
 }
 
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
 
+.header i {
+  padding-right: 15px;
+}
+
+
+.button {
+  display: inline-block;
+  text-align: center;
+}
 
 .hidden {
   display: none;

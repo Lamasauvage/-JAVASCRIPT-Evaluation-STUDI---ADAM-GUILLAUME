@@ -3,45 +3,50 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/581a2c77be.js" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.tailwindcss.com"></script>
     
   </head>
 
+  <header class="header">
+    <h1><i class='fas fa-dice' style='font-size:48px;color:red'></i>The Dice Game</h1>
+  </header>
+
   <body>
-    <h1>The Dice Game</h1>
-    <i class='fas fa-dice' style='font-size:48px;color:red'></i>
+
+    <div id="win-message"></div><br>
+    <i class="fa-solid fa-plus"></i>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="new-game" onclick="newGame()">NEW GAME</button>
+
+    <div class="mt-8 grid grid-cols-2 gap-10">
+      <section class="player player--0 player--active">
+        <h2 id="name--0">PLAYER 1</h2>
+        <h3 class="total" id="total-player--0">0</h3> 
+        <div class="current">
+          <p class="current-score" id="current--0">0</p>
+        </div>
+      </section>
+
+      <section class="player player--1">
+        <h2 id="name--1">PLAYER 2</h2>
+        <h3 class="total" id="total-player--1">0</h3>
+        <div class="current">
+          <p id="current--1">0</p> 
+        </div>
+      </section>
+    </div>
+
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" class="roll-dice" onclick="diceRoll()">ROLL DICE</button>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onclick="hold()">HOLD</button>
+
+    <p id="message-el"></p>
+    <p id="roll-dice-result"></p>
+    <img src="images/dice1.png" alt="playing dice" class="dice" />
 
     <div class="rules">
       <p>Welcome to the Dice Game</p>
       <p>First to 100 win</p>
       <p>..............</p>
     </div>
-
-    <div id="win-message"></div><br>
-    <button id="new-game" onclick="newGame()">NEW GAME</button>
-
-    <section class="player player--0 player--active">
-      <h2 id="name--0">PLAYER 1</h2>
-      <h3 class="total" id="total-player--0">0</h3> 
-      <div class="current">
-        <p class="current-score" id="current--0">0</p>
-      </div>
-    </section>
-
-    <section class="player player--1">
-      <h2 id="name--1">PLAYER 2</h2>
-      <h3 class="total" id="total-player--1">0</h3>
-      <div class="current">
-        <p id="current--1">0</p> 
-      </div>
-    </section>
-
-    <button class="roll-dice" onclick="diceRoll()">ROLL DICE</button>
-    <button onclick="hold()">HOLD</button>
-
-    <p id="message-el"></p>
-    <p id="roll-dice-result"></p>
-    <img src="images/dice1.png" alt="playing dice" class="dice" />
     
     <script src="index.js"></script>
 
