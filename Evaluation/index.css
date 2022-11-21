@@ -6,6 +6,8 @@
   font-family: "Lato", sans-serif;
 }
 
+/* TITLE */
+
 .header {
   text-align: center;
   text-transform: uppercase;
@@ -18,10 +20,26 @@
   padding-right: 15px;
 }
 
+/* PLAYER 1 */
+
+.player {
+  text-align: center;
+  font-size: 35px;
+}
+
+#name--0, #name--1 {
+  color: lightblue;
+  font-weight: bold;
+}
+
 
 .button {
   display: inline-block;
   text-align: center;
+}
+
+.fa-solid {
+  color: red;
 }
 
 .hidden {
