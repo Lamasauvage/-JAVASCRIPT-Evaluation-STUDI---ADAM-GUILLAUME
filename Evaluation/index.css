@@ -8,6 +8,7 @@
 
 body {
   display: grid;
+  background-color: aliceblue;
 }
 
 /* TITLE */
@@ -27,21 +28,16 @@ h1 {
 
 #name--0, #name--1 {
   color: black;
+  padding-top: 100px;
 }
 
-.player--active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.player--active .current {
-  opacity: 1;
-}
 
 /* TOTAL POINTS */
 
 h3 {
   color: red;
-  font-size: 100px !important;
+  font-size: 90px !important;
+  padding-top: 45px;
 }
 
 /* CURRENT POINTS */
@@ -49,7 +45,7 @@ h3 {
 .current {
   background-color: #F08080;
   width: 217px;
-  margin-top: 300px;
+  margin-top: 170px;
   display: grid;
 }
 
@@ -99,11 +95,11 @@ h3 {
 }
 
 #btn-roll {
-  top: 70%;
+  top: 68%;
   left: 44%;
 }
 
 #btn-hold {
-  top: 78%;
+  top: 75%;
   left: 45%;
 }
