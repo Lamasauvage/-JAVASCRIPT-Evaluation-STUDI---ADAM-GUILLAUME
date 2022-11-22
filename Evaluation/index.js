@@ -23,11 +23,27 @@ totalPlayer1.textContent = 0
 let winMessageEl
 let round = 0;
 let activePlayer = 0;
-const scores = [0,0];
+let scores = [0,0];
+
+// Hide dice at begining
 
 diceDisplay.classList.add("hidden")
 
-// document.getElementById("roll-dice").addEventListener('click', function() {}
+// Function New Game = reset all score to 0
+
+function newGame() {
+  diceDisplay.classList.add("hidden")
+  totalPlayer0.textContent = 0
+  totalPlayer1.textContent = 0
+  roundPlayer0.textContent = 0
+  roundPlayer1.textContent = 0
+  rollDiceResult.innerHTML = 0
+  round = 0;
+  activePlayer = 0;
+  scores = [0,0];
+}
+
+newGame();
 
 // Generate random number
 
@@ -50,7 +66,7 @@ function switchPlayer() {
 
     activePlayer = activePlayer === 0 ? 1 : 0
     round = 0
-    // CSS
+
     player0El.classList.toggle("player--active")
     player1El.classList.toggle("player--active")
 }
@@ -72,16 +88,6 @@ function renderGame() {
   } else {
     switchPlayer()
   }
-
-
-// Message en cas de roll 1 (Temporaire)
-
-  if (rollNumber === 1) {
-    message = "You lost all your points"
-  } else {
-    message = ""
-  }
-  messageEl.textContent = message
 }
 
 
@@ -95,27 +101,34 @@ function hold() {
 
   // Check if total > 100
   if (scores[activePlayer] >= 100)
-    winMessageEl = "You won"
+    winMessageEl = "YOU WIN !"
+
   winMessage.textContent = winMessageEl
 
-  // True : Game end
+  // True : Game end / Hide dice when a player win 
+
+  if (scores[activePlayer] >= 100)
+    diceDisplay.classList.add("hidden")
+
 
   // False : Switch player
   switchPlayer()
 }
 
+// COMMENTAIRES 
 
-// Function New Game = reset all score to 0
 
- function newGame() {
-  totalPlayer0.textContent = 0
-  totalPlayer1.textContent = 0
-  roundPlayer0.textContent = 0
-  roundPlayer1.textContent = 0
-  rollDiceResult.innerHTML = 0
-  round = 0;
-  activePlayer = 0;
-  scores = [0,0];
-  diceDisplay.classList.add("hidden")
+ // I wanted to dynamicaly render the player who won but i don't know how to correcly write it, i have the error msg "undefinedplayer" when score <=100)" /
 
-}
+    // winMessageEl = `player--${activePlayer}` 
+    // winMessage.textContent = winMessageEl + " WIN "
+
+    // or 
+
+    //document.getElementById(`name--${activePlayer}`).textContent = winMessageEl
+    //winMessage.textContent = winMessageEl + " WIN "
+
+
+
+
+
