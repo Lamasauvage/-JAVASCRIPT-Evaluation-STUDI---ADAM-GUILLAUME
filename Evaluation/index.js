@@ -25,7 +25,7 @@ let round = 0;
 let activePlayer = 0;
 let scores = [0,0];
 
-// Hide dice
+// Hide dice at begining
 
 diceDisplay.classList.add("hidden")
 
@@ -101,14 +101,21 @@ function hold() {
 
   // Check if total > 100
   if (scores[activePlayer] >= 100)
-    winMessageEl = "You won"
+    winMessageEl = "YOU WIN !"
+
   winMessage.textContent = winMessageEl
 
-  // True : Game end
+  // True : Game end / Hide dice when a player win 
+
+  if (scores[activePlayer] >= 100)
+    diceDisplay.classList.add("hidden")
+
 
   // False : Switch player
   switchPlayer()
 }
+
+// COMMENTAIRES 
 
 
  // I wanted to dynamicaly render the player who won but i don't know how to correcly write it, i have the error msg "undefinedplayer" when score <=100)" /

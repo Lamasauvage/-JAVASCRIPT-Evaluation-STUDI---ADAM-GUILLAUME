@@ -8,7 +8,6 @@
 
 body {
   display: grid;
-  background-color: aliceblue;
 }
 
 /* TITLE */
@@ -17,6 +16,15 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+/* RULES */
+
+.rules {
+  text-align: center;
+  position: absolute;
+  left: 39%;
+  top: 23%;
 }
 
 /* PLAYER SECTION */
@@ -66,6 +74,11 @@ h3 {
   display: none;
 }
 
+.player--active {
+  background-color:rgb(241, 228, 228)
+}
+
+
 /* DICE */
 
 .dice {
@@ -102,4 +115,12 @@ h3 {
 #btn-hold {
   top: 75%;
   left: 45%;
+}
+
+#win-message {
+  position: absolute;
+  left: 44%;
+  top: 45%;
+  color: red;
+  font-size: 40px;
 }
