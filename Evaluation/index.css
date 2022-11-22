@@ -36,10 +36,10 @@ h1 {
 /* RULES */
 
 .rules {
-  text-align: center;
   position: absolute;
-  left: 39%;
-  top: 23%;
+  text-align: center;
+  left: 40%;
+  top: 8%;
 }
 
 /* PLAYER SECTION */
@@ -47,7 +47,7 @@ h1 {
 .player {
   width: 50%;
   height: 600px;
-  padding: 100px;
+  padding: 20px;
   float: left;
 }
 
@@ -78,6 +78,7 @@ h1 {
   width: 50%;
   margin: auto;
   padding: 8px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -111,15 +112,15 @@ h1 {
   top: 40%;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
   transform: translateX(-50%);
-  height: 10rem;
+  height: 100px;
 }
 
 /* BUTTONS */
 
 .bg-white-500 {
   position: absolute;
-  left: 45%;
   background: none;
+  left: 45%;
   border: none;
   cursor: pointer;
   font-size: 20px;
@@ -128,17 +129,16 @@ h1 {
 }
 
 #btn-newgame {
-  left: 45%;
+  top: 20%;
+  z-index: 1;
 }
 
 #btn-roll {
-  top: 68%;
-  left: 44%;
+  top: 65%;
 }
 
 #btn-hold {
-  top: 75%;
-  left: 45%;
+  top: 70%;
 }
 
 #win-message {
