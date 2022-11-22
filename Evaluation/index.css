@@ -6,13 +6,11 @@
   font-family: "Lato", sans-serif;
 }
 
-body {
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-}
 
 main {
-  background-color: rgba(255, 255, 255, 0.35);
+  
 }
+
 /* TITLE */
 
 h1 {
@@ -25,7 +23,7 @@ h1 {
 
 .player {
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 #name--0, #name--1 {
@@ -58,12 +56,12 @@ h3 {
 .current-el {
   text-transform: uppercase;
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
 }
 
 .current-score {
-  font-size: 65px;
+  font-size: 50px;
   color: #FFFFFF;
 }
 
@@ -91,20 +89,21 @@ h3 {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 35px;
+  font-size: 25px;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 #btn-newgame {
-  left: 43%;
+  left: 44%;
 }
 
 #btn-roll {
-  top: 75%;
-  left: 43%;
+  top: 70%;
+  left: 44%;
 }
 
 #btn-hold {
-  top: 85%;
+  top: 78%;
   left: 45%;
 }
