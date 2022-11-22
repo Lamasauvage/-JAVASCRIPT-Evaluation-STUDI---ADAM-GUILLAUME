@@ -3,11 +3,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
 }
 
 body {
-  display: grid;
+  position: relative;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 1000px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  background-color: white;
 }
 
 /* TITLE */
@@ -30,22 +45,29 @@ h1 {
 /* PLAYER SECTION */
 
 .player {
-  text-align: center;
-  font-size: 40px;
+  width: 50%;
+  height: 600px;
+  padding: 100px;
+  float: left;
 }
 
 #name--0, #name--1 {
-  color: black;
-  padding-top: 100px;
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  position: relative;
 }
 
 
 /* TOTAL POINTS */
 
-h3 {
+.total {
+  text-align: center;
+  font-size: 80px;
   color: red;
-  font-size: 90px !important;
-  padding-top: 45px;
 }
 
 /* CURRENT POINTS */
