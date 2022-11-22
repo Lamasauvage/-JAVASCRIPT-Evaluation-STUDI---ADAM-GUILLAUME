@@ -73,10 +73,12 @@ h1 {
 /* CURRENT POINTS */
 
 .current {
-  background-color: #F08080;
-  width: 217px;
-  margin-top: 170px;
-  display: grid;
+  background-color: lightcoral;
+  color: #fff;
+  width: 50%;
+  margin: auto;
+  padding: 8px;
+  text-align: center;
 }
 
 .current-el {
