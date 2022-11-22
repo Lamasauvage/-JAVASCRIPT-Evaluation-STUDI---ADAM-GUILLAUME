@@ -27,8 +27,6 @@ const scores = [0,0];
 
 diceDisplay.classList.add("hidden")
 
-// document.getElementById("roll-dice").addEventListener('click', function() {}
-
 // Generate random number
 
 function getRandomDiceNumber() {
