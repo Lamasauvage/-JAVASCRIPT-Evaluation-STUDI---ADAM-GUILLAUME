@@ -33,6 +33,7 @@ diceDisplay.classList.add("hidden")
 
 function newGame() {
   diceDisplay.classList.add("hidden")
+  winMessage.classList.add("hidden")
   totalPlayer0.textContent = 0
   totalPlayer1.textContent = 0
   roundPlayer0.textContent = 0
@@ -103,6 +104,7 @@ function hold() {
   if (scores[activePlayer] >= 100)
     winMessageEl = "YOU WIN !"
 
+  winMessage.classList.remove("hidden")
   winMessage.textContent = winMessageEl
 
   // True : Game end / Hide dice when a player win 
